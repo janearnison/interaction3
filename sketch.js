@@ -17,7 +17,8 @@ function preload() {
 
 function setup(){
   
- createCanvas(400, 400);
+  canvas = createCanvas(windowWidth, windowHeight); 
+    noCursor(); 
   
   shapeColor = color(245, 150, 90);
 
