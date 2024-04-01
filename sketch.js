@@ -3,18 +3,15 @@
 // play sound when mouse is clicked in browser 
 // stop sound when mouse click ends
 
-let watersound; 
-let watersound2; 
-let watersound3; 
-let watersound4; 
+
 let shapeColor;
+let sounds = []; 
 
-function preload(){
-
-    watersound = loadSound('sounds/water1.mp3')
-    watersound2 = loadSound('sounds/water2.mp3')
-    watersound3 = loadSound('sounds/water3.mp3')
-    watersound4 = loadSound('sounds/water4.mp3')
+function preload() {
+  sounds.push(loadSound('sounds/water1.mp3')); 
+  sounds.push(loadSound('sounds/water2.mp3'));
+  sounds.push(loadSound('sounds/water3.mp3'));
+  
 }
 
 
@@ -40,8 +37,10 @@ function draw() {
 
 function mousePressed(){
   shapeColor = color(random(255), random(255), random(255) );
-   watersound.play();
-  
-}
+let randSound = random(sounds);
+  randSound.play();
+   
+ }
+
 
 
