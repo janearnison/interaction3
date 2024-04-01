@@ -19,7 +19,7 @@ function setup(){
   
  createCanvas(400, 400);
   
-  shapeColor = color(245, 10, 90);
+  shapeColor = color(245, 150, 90);
 
   const audioArray = ['sounds/water1.mp3', 'sounds/water2.mp3', 'water3.mp3', 'water4.mp3'];
 
@@ -27,7 +27,7 @@ function setup(){
 
 
 function draw() {
-  background(187, 227, 247);
+  background(187, 10, 247);
   
 	noStroke();
   fill(shapeColor);
