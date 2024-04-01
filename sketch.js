@@ -32,7 +32,7 @@ function draw() {
   
 	noStroke();
   fill(shapeColor);
-  ellipse(width/2, height/2, 200,200);
+  ellipse(width/2, height/2, windowWidth,windowHeight);
   
 }
 
