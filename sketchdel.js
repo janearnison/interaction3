@@ -39,7 +39,7 @@ function draw() {
 
   // use level to draw a green rectangle
   let levelHeight = map(level, 0, 0.1, 0, height);
-  fill(100, 250, 100);
+  fill(100, 0, 100);
   rect(0, height, width, -levelHeight);
 
   let filterFreq = map(mouseX, 0, width, 60, 15000);
