@@ -1,9 +1,6 @@
 let soundFiles = [];
 let delays = [];
 let numSamples = 5; // Number of different samples
-let maxConcurrentSounds = 5; // Maximum number of concurrent sounds allowed
-let activeTouches = {}; // Object to track active touches by pointerId
-
 
 // Assuming you have some event listener for pointer press
 // Example:
@@ -23,7 +20,6 @@ function setup() {
   // Add event listeners for pointer events
   canvas.addEventListener('pointerdown', pointerPressed);
   canvas.addEventListener('pointerup', pointerReleased);
-  canvas.addEventListener('pointercancel', pointerCanceled);
 }
 
 function draw() {
@@ -71,31 +67,16 @@ function pointerPressed(event) {
     getAudioContext().resume();
   }
 
-  // If max concurrent sounds are already playing, ignore the new touch
-  if (Object.keys(activeTouches).length >= maxConcurrentSounds) {
-    return;
-  }
 
   let x = event.clientX - canvas.getBoundingClientRect().left;
   let sampleIndex = Math.floor(map(x, 0, width, 0, numSamples));
   if (sampleIndex >= 0 && sampleIndex < numSamples && !soundFiles[sampleIndex].isPlaying()) {
-    activeTouches[event.pointerId] = true;
     playSound(sampleIndex, event.clientY);
   }
 }
 
 function pointerReleased(event) {
   console.log("Pointer released", event);
-  
-  // Remove the touch from activeTouches when pointer up event occurs
-  delete activeTouches[event.pointerId];
-}
-
-function pointerCanceled(event) {
-  console.log("Pointer canceled", event);
-  
-  // Remove the touch from activeTouches when pointer cancel event occurs
-  delete activeTouches[event.pointerId];
 }
 
 function playSound(sampleIndex, pageY) {
@@ -117,10 +98,6 @@ function playSound(sampleIndex, pageY) {
 
   sound.connect(delay);
 
-  sound.onended(() => {
-    // Remove the touch from activeTouches when sound finishes playing
-    delete activeTouches[event.pointerId];
-  });
 
   }
   
