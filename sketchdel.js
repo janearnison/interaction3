@@ -20,7 +20,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(710, 400);
+  createCanvas(windowWidth,windowHeight);
 
   soundFile.disconnect(); // so we'll only hear delay
 
