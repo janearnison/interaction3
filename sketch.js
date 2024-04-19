@@ -6,13 +6,15 @@
 
 let shapeColor;
 let sounds = []; 
+let reverb; 
 
 function preload() {
-  sounds.push(loadSound('sounds/water1.mp3')); 
-  sounds.push(loadSound('sounds/water2.mp3'));
-  sounds.push(loadSound('sounds/water3.mp3'));
-  sounds.push(loadSound('sounds/water4.mp3'));
-  sounds.push(loadSound('sounds/water5.mp3'));
+  sounds.push(loadSound('sounds/water6.mp3')); 
+  sounds.push(loadSound('sounds/water7.mp3'));
+  sounds.push(loadSound('sounds/water8.mp3'));
+  sounds.push(loadSound('sounds/water9.mp3'));
+  
+  
 }
 
 
@@ -22,8 +24,8 @@ function setup(){
     noCursor(); 
   
   shapeColor = color(245, 150, 90);
-5
-  const audioArray = ['sounds/water1.mp3', 'sounds/water2.mp3', 'sounds/water3.mp3', 'sounds/water4.mp3', 'sounds/water5.mp3'];
+
+  const audioArray = ['sounds/water6.mp3', 'sounds/water7.mp3', 'sounds/water8.mp3', 'sounds/water9.mp3'];
 
 }
 
